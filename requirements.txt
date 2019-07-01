@@ -25,7 +25,6 @@ juspayp3==1.0.1
 kombu==4.2.2.post1
 paypal==1.2.5
 Pillow==5.4.1
-pkg-resources==0.0.0
 psycopg2==2.8.3
 pycparser==2.19
 PyJWT==1.7.1
