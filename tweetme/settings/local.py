@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = '(^)xpu7m-5-2vm$6h&4t$g2$2!r^5s5**hbsuueb-2lo_61+2f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'tweetme.urls'
@@ -85,18 +86,11 @@ WSGI_APPLICATION = 'tweetme.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 
+
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd18iruhc4752se',
-        'USER': 'zehruiflzjegwc',
-        'PASSWORD': '823a8ab914c1b1a3e9017064f5818fa8c0026964e923cf368e147552fd57e0b5',
-        'HOST': 'ec2-174-129-25-182.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -142,6 +136,7 @@ STATICFILES_DIRS = [
     # will not be served, long term storage
     os.path.join(BASE_DIR, "static-storage"),
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # will be served
