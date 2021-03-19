@@ -17,7 +17,7 @@ django-payments==0.13.0
 django-payments-razorpay==0.1.2
 django-paypal==0.5.0
 django-rest-framework==0.1.0
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 gunicorn==19.9.0
 idna==2.8
 juspay==1.1.2
